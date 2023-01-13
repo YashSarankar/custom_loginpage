@@ -1,0 +1,57 @@
+ Form(
+                        child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 90),
+                          child: TextFormField(
+                            keyboardType: TextInputType.emailAddress,
+                            // maxLength: 20,
+                            decoration: const InputDecoration(
+                                // errorText: "error",
+                                border: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                  width: 1.0,
+                                )),
+                                prefixIcon: Icon(Icons.person),
+                                labelText: "Username",
+                                hintText: "Enter a username"),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "Please enter a username";
+                              }
+                              return null;
+                            },
+                            // onTap: (value)=>username=value,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 18,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 90,
+                          ),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    width: 1.0,
+                                  ),
+                                ),
+                                prefixIcon: Icon(Icons.password),
+                                labelText: "Password",
+                                hintText: "Enter a Password"),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "Please enter a password";
+                              }
+                              return null;
+                            },
+                            obscureText: true,
+                            // onTap: (value)=>username=value,
+                          ),
+                        ),
+                      ],
+                    )),
